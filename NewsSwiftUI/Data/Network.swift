@@ -7,8 +7,9 @@
 
 import Foundation
 
-
-let newsapiAPIKey = "65bbe17046734447a60a328d439aa0ac"     // "<your newsapi API key goes here>"
+// get your free, no hassle, no spam, newsapi API key here (I'm not associated in any way. just been using this service for several years with no issues):
+//   https://newsapi.org/register
+let newsapiAPIKey = "<your newsapi API key goes here>"     // "<your newsapi API key goes here>"
 
 let topHeadlinesRequestURLString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(newsapiAPIKey)"
 let techHeadlinesRequestURLString = "https://newsapi.org/v2/top-headlines?category=technology&country=us&apiKey=\(newsapiAPIKey)"
@@ -69,8 +70,8 @@ enum NetworkData {
             throw NetworkError.invalidServerResponse
         }
         
-        let decoder = JSONDecoder()
         //print(String(bytes: data, encoding: String.Encoding.utf8))
+        let decoder = JSONDecoder()
         let theNews = try decoder.decode(T.self, from: data)
 
         return theNews

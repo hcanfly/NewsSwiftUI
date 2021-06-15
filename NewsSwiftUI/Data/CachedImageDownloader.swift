@@ -30,6 +30,7 @@ struct ImageLoader {
 extension UIImage {
     var thumbnail: UIImage? {
         get async {
+            //TODO: these are specific for this app
             let size = CGSize(width: 160, height: 88)
             return await self.byPreparingThumbnail(ofSize: size)
         }
@@ -83,31 +84,6 @@ actor CachedImageDownloader {
         } catch {
             cache[url] = nil
             throw error
-        }
-    }
-}
-
-
-struct CachedAsyncImageView: View {
-    @State private var image: Image?
-    var url: URL?
-    
-    var body: some View {
-        ZStack {
-            if let i = image {
-                i
-            } else {
-                Color.mint
-            }
-        }
-        .task(id: url) {
-            do {
-                if let url = url {
-                    try await self.image = CachedImageDownloader.image(from: url)
-                }
-            } catch {
-                
-            }
         }
     }
 }

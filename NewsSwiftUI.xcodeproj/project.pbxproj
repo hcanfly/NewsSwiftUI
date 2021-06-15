@@ -11,6 +11,11 @@
 		42117B572676D611005E34AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B562676D611005E34AE /* ContentView.swift */; };
 		42117B592676D612005E34AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42117B582676D612005E34AE /* Assets.xcassets */; };
 		42117B5C2676D612005E34AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42117B5B2676D612005E34AE /* Preview Assets.xcassets */; };
+		42117B672676D696005E34AE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B632676D696005E34AE /* Network.swift */; };
+		42117B682676D696005E34AE /* CachedImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B642676D696005E34AE /* CachedImageDownloader.swift */; };
+		42117B692676D696005E34AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B652676D696005E34AE /* Model.swift */; };
+		42117B6A2676D696005E34AE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B662676D696005E34AE /* WebView.swift */; };
+		42117B6D26779569005E34AE /* CachedAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42117B6C26779569005E34AE /* CachedAsyncImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		42117B562676D611005E34AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		42117B582676D612005E34AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42117B5B2676D612005E34AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42117B622676D66D005E34AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		42117B632676D696005E34AE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		42117B642676D696005E34AE /* CachedImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageDownloader.swift; sourceTree = "<group>"; };
+		42117B652676D696005E34AE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		42117B662676D696005E34AE /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		42117B6C26779569005E34AE /* CachedAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +62,12 @@
 		42117B532676D611005E34AE /* NewsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				42117B622676D66D005E34AE /* Info.plist */,
 				42117B542676D611005E34AE /* NewsSwiftUIApp.swift */,
 				42117B562676D611005E34AE /* ContentView.swift */,
+				42117B6C26779569005E34AE /* CachedAsyncImageView.swift */,
+				42117B662676D696005E34AE /* WebView.swift */,
+				42117B6B2676D6FA005E34AE /* Data */,
 				42117B582676D612005E34AE /* Assets.xcassets */,
 				42117B5A2676D612005E34AE /* Preview Content */,
 			);
@@ -65,6 +80,16 @@
 				42117B5B2676D612005E34AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42117B6B2676D6FA005E34AE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				42117B642676D696005E34AE /* CachedImageDownloader.swift */,
+				42117B652676D696005E34AE /* Model.swift */,
+				42117B632676D696005E34AE /* Network.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42117B692676D696005E34AE /* Model.swift in Sources */,
+				42117B682676D696005E34AE /* CachedImageDownloader.swift in Sources */,
 				42117B572676D611005E34AE /* ContentView.swift in Sources */,
+				42117B6A2676D696005E34AE /* WebView.swift in Sources */,
 				42117B552676D611005E34AE /* NewsSwiftUIApp.swift in Sources */,
+				42117B672676D696005E34AE /* Network.swift in Sources */,
+				42117B6D26779569005E34AE /* CachedAsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,15 +299,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NewsSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 5EP5YM7PC7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = NewsSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = NewsSwiftUI;
+				INFOPLIST_KEY_CFBundleName = NewsSwiftUI;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,15 +332,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NewsSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 5EP5YM7PC7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = NewsSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = NewsSwiftUI;
+				INFOPLIST_KEY_CFBundleName = NewsSwiftUI;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
